@@ -6,6 +6,7 @@
  */
 
 export default function getFullResponseFromAPI(success) {
+  const error = 'The fake API is not working currently';
   return new Promise((resolve, reject) => {
     if (success === true) {
       resolve(
@@ -16,7 +17,7 @@ export default function getFullResponseFromAPI(success) {
         },
       );
     } else {
-      reject('The fake API is not working currently');
+      reject(error);
     }
   });
 }
