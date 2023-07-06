@@ -17,7 +17,7 @@ export default function getFullResponseFromAPI(success) {
         },
       );
     } else {
-      reject(error);
+      reject({Error: error});
     }
   });
 }
