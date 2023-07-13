@@ -1,4 +1,3 @@
-import { resolvePlugin } from '@babel/core';
 import signUpUser from './4-user-promise';
 import uploadPhoto from './5-photo-reject';
 /**
