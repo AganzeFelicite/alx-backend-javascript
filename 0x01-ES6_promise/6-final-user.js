@@ -6,11 +6,22 @@ import uploadPhoto from './5-photo-reject';
  * @param : firstname, lastname , filename
  */
 
-export default function handleProfileSignup(firstName, lastName, fileName) {
-  const arr = [signUpUser(firstName, lastName), uploadPhoto(fileName)];
-  return Promise.allSettled(arr)
-    .then((resultArr) => resultArr.map((result) => ({
-      status: result.status,
-      value: result.status === 'fulfilled' ? result.value : result.reason.message,
-    })));
+export default async function handleProfileSignup(firstName, lastName, fileName) {
+  const result = [];
+  try {
+    const user = await signUpUser(firstName, lastName);
+    result.push({ status: 'fulfilled', value: user });
+  } catch (err) {
+    result.push({ status: 'rejected', value: err.toString() });
+  }
+  try {
+    const upload = await uploadPhoto(fileName);
+    result.push({ status: 'fulfilled', value: upload });
+  } catch (err) {
+    result.push({
+      status: 'rejected',
+      value: err.toString(),
+
+    });
+  }
 }
