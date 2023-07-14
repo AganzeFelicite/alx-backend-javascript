@@ -8,7 +8,7 @@ export default async function asyncUploadUser() {
 //   const promise = [createUser(), uploadPhoto()];
 //   return Promise.all(promise)
 //     .then((resultArr) => ({
-//       status: resultArr[1],
+//       photo: resultArr[1],
 //       user: resultArr[0],
 //     }))
 //     .catch(() => ({
@@ -18,12 +18,12 @@ export default async function asyncUploadUser() {
   //     }));
   try {
     return {
-      status: await createUser(),
+      photo: await createUser(),
       user: await uploadPhoto(),
     };
   } catch (e) {
     return {
-      status: null,
+      photo: null,
       user: null,
     };
   }
