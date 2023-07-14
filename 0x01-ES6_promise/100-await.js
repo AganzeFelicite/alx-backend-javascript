@@ -18,8 +18,8 @@ export default async function asyncUploadUser() {
   //     }));
   try {
     return {
-      photo: await createUser(),
-      user: await uploadPhoto(),
+      photo: await uploadPhoto(),
+      user: await createUser(),
     };
   } catch (e) {
     return {
