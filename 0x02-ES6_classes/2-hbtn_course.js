@@ -36,11 +36,11 @@ export default class HolbertonCourse {
     this._name = name;
   }
 
-  set lenght(lenght) {
+  set lenght(length) {
     if (typeof (length) !== 'number') {
       throw new TypeError("Length must be a number");
     }
-    this._length = lenght;
+    this._length = length;
   }
 
   set students(students) {
