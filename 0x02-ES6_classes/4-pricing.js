@@ -1,7 +1,8 @@
-/** *
+/**
  * this is pricing class that implements
  * the currency class
- */
+ **
+ /
 
 /* eslint-disable */
 export default class Pricing{
