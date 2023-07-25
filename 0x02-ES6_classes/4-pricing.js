@@ -1,15 +1,8 @@
 import Currency from './3-currency';
-/**
- * this is pricing class that implements
- * the currency class
- **
- /
-
-/* eslint-disable import/extensions no-underscore-dangle */
-/* eslint-disable  no-underscore-dangle */
+/* eslint-disable */
 export default class Pricing {
   constructor(amount, currency) {
-    if (typeof (amount) !== 'number' || !(currency instanceof Currency)) throw new Error();
+    if (typeof amount !== 'number' || !(currency instanceof Currency)) throw new Error();
     this._amount = amount;
     this._currency = currency;
   }
@@ -18,23 +11,23 @@ export default class Pricing {
     return this._amount;
   }
 
-  set amount(amount) {
-    this._amount = amount;
+  set amount(value) {
+    this._amount = value;
   }
 
   get currency() {
     return this._currency;
   }
 
-  set currency(currency) {
-    this._currency = currency;
+  set currency(value) {
+    this._currency = value;
   }
 
   displayFullPrice() {
-    return `${this.amount} ${new Currency(this.currency.code, this.currency.name).displayFullCurrency()}`;
+    return `${this.amount} ${this.currency.name} (${this.currency.code})`;
   }
 
-  static converPrice(amount, conversionRate) {
+  static convertPrice(amount, conversionRate) {
     if (typeof amount !== 'number' || typeof conversionRate !== 'number') throw new Error();
     return amount * conversionRate;
   }
