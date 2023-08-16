@@ -9,7 +9,7 @@ export default function updateStudentGradeByCity(getListStudents, city, newGrade
   return getListStudents.filter((item) => item.location === city)
     .map((student) => {
       const grades = newGrades.find((grade) => grade.studentId === student.id);
-      const gradesNA = grades ? grades.grade : 'N/A';
-      return { ...student, gradesNA };
+      const grade = grades ? grades.grade : 'N/A';
+      return { ...student, grade };
     });
 }
