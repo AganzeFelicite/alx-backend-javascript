@@ -4,11 +4,11 @@
  */
 
 export default function groceriesList() {
-  const mapObj = new Map();
-  mapObj.set('Appels', 10);
-  mapObj.set('Tomatoes', 10);
-  mapObj.set('Pasta', 1);
-  mapObj.set('Rice', 1);
-  mapObj.set('Banana', 5);
-  return mapObj;
+  return new Map([
+    ['Apples', 10],
+    ['Tomatoes', 10],
+    ['Pasta', 1],
+    ['Rice', 1],
+    ['Banana', 5],
+  ]);
 }
