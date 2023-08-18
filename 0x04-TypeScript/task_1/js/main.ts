@@ -30,3 +30,9 @@ const director1: Directors = {
   };
   console.log(director1);
 
+
+interface printTeachersInterface{
+    (firstName : string, lastName: string) : string
+}
+const printTeacher : printTeachersInterface = (firstName : string, lastName: string) : string => `${firstName[0]}. ${lastName}`
+console.log(printTeacher("Aganze", "Felicite"))
