@@ -1,5 +1,5 @@
 /**
- * perform a synchronous operation
+ * perform a asynchronous operation
  * in node
  */
 const fs = require('fs');
@@ -42,4 +42,5 @@ function countStudents(path) {
     });
   });
 }
+
 module.exports = countStudents;
